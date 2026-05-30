@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { assetPath } from "@/lib/site";
 
 const SITE_URL = "https://ferreteriaelkiosko.com";
 
@@ -117,7 +118,7 @@ export default function RootLayout({
         />
         <link
           rel="preload"
-          href="/images/logo-fk.svg"
+          href={assetPath("/images/logo-fk.svg")}
           as="image"
           type="image/svg+xml"
           fetchPriority="high"

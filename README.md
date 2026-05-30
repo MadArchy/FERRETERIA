@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ferretería El Kiosko
 
-## Getting Started
+Sitio web de ferretería construido con [Next.js](https://nextjs.org).
 
-First, run the development server:
+## Desarrollo local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Publicar en GitHub Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El proyecto está configurado para desplegarse en:
 
-## Learn More
+**https://madarchy.github.io/FERRETERIA/**
 
-To learn more about Next.js, take a look at the following resources:
+### Activar GitHub Pages (solo la primera vez)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Entra a tu repositorio: [github.com/MadArchy/FERRETERIA](https://github.com/MadArchy/FERRETERIA)
+2. Ve a **Settings** → **Pages**
+3. En **Build and deployment** → **Source**, elige **GitHub Actions**
+4. Guarda. El workflow se ejecuta al hacer push a `main`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Desplegar cambios
 
-## Deploy on Vercel
+```bash
+git add .
+git commit -m "Tu mensaje"
+git push origin main
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+En **Actions** verás el workflow **Deploy to GitHub Pages**. Cuando termine en verde, la web estará en la URL de arriba (puede tardar 1–2 minutos).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Probar build de Pages en tu PC (opcional)
+
+PowerShell:
+
+```powershell
+$env:NEXT_PUBLIC_BASE_PATH="/FERRETERIA"
+npm run build
+```
+
+La carpeta `out/` contiene el sitio estático.
+
+## Alternativa: Vercel
+
+Para dominio propio y despliegue automático sin `/FERRETERIA` en la URL, [Vercel](https://vercel.com) conectado al mismo repositorio es la opción más simple para Next.js.

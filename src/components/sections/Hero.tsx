@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
 import { contactInfo } from "@/data/contact";
+import { assetPath } from "@/lib/site";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 const WHATSAPP_NUMBER = contactInfo.whatsappNumber;
@@ -25,7 +26,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero_tools.png"
+          src={assetPath("/images/hero_tools.png")}
           alt="Herramientas profesionales - Ferretería El Kiosko"
           fill
           className="object-cover object-center"
@@ -65,7 +66,7 @@ export default function Hero() {
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo-fk.svg"
+              src={assetPath("/images/logo-fk.svg")}
               alt="Ferretería El Kiosko"
               width={288}
               height={288}
