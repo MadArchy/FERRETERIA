@@ -6,9 +6,17 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatPrice(price: number): string {
-  return new Intl.NumberFormat("es-AR", {
+  return new Intl.NumberFormat("es-CO", {
     style: "currency",
-    currency: "ARS",
+    currency: "COP",
     minimumFractionDigits: 0,
   }).format(price);
+}
+
+export function getAssetPath(path: string): string {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  // Ensure the path starts with a slash
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  // If basePath is active, prepend it
+  return `${basePath}${cleanPath}`;
 }

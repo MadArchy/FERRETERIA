@@ -7,6 +7,7 @@ import { type Product } from "@/data/products";
 import { formatPrice } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import { contactInfo } from "@/data/contact";
+import { assetPath } from "@/lib/site";
 
 const WHATSAPP_NUMBER = contactInfo.whatsappNumber;
 
@@ -65,7 +66,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
       {/* Product image */}
       <div className="relative h-44 bg-[#141414] overflow-hidden flex items-center justify-center">
         <Image
-          src={product.image}
+          src={assetPath(product.image)}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

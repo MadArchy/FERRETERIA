@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { type Category } from "@/data/categories";
+import { assetPath } from "@/lib/site";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Wrench,
@@ -42,7 +43,7 @@ export default function CategoryCard({ category, index }: CategoryCardProps) {
       {/* Background image */}
       <div className="absolute inset-0 z-0 pointer-events-none transition-all duration-500">
         <Image
-          src={category.image}
+          src={assetPath(category.image)}
           alt={category.name}
           fill
           sizes="(max-width: 768px) 50vw, 25vw"

@@ -9,6 +9,7 @@ import {
   Wrench,
 } from "lucide-react";
 import FacebookIcon from "@/components/ui/FacebookIcon";
+import { assetPath } from "@/lib/site";
 
 const footerCategories = [
   { label: "Herramientas", href: "/catalogo?cat=herramientas" },
@@ -44,7 +45,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex flex-col items-start gap-4 mb-5 group">
               <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-gradient-to-br from-[#FFFBEB] via-[#FEF9C3] to-[#FDE68A] border border-[#FACC15]/50 p-3 shadow-[0_4px_20px_rgba(0,0,0,0.35)] ring-1 ring-white/40">
                 <Image
-                  src="/images/logo.svg"
+                  src={assetPath("/images/logo.svg")}
                   alt="Logo Ferretería El Kiosko"
                   fill
                   unoptimized

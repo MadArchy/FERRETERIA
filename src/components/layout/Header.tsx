@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { contactInfo } from "@/data/contact";
+import { assetPath } from "@/lib/site";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 const navLinks = [
@@ -73,7 +74,7 @@ export default function Header() {
             >
               <div className="relative w-10 h-10 lg:w-12 lg:h-12 flex-shrink-0">
                 <Image
-                  src="/images/logo.svg"
+                  src={assetPath("/images/logo.svg")}
                   alt="Logo Ferretería El Kiosko"
                   fill
                   sizes="48px"

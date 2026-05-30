@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Tag, ArrowRight, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { contactInfo } from "@/data/contact";
+import { assetPath } from "@/lib/site";
 
 const WHATSAPP_NUMBER = contactInfo.whatsappNumber;
 const WHATSAPP_MSG = encodeURIComponent(
@@ -55,7 +56,7 @@ export default function PromoBanner() {
           {/* Background image */}
           <div className="absolute inset-0">
             <Image
-              src="/images/promo_banner.png"
+              src={assetPath("/images/promo_banner.png")}
               alt="Banner de promociones - Ferretería El Kiosko"
               fill
               className="object-cover"
