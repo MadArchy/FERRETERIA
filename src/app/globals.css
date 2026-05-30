@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-brand-yellow: #FACC15;
+  --color-brand-yellow-dark: #EAB308;
+  --color-brand-yellow-light: #FDE68A;
+  --color-brand-black: #0A0A0A;
+  --color-brand-dark-1: #111111;
+  --color-brand-dark-2: #1C1C1E;
+  --color-brand-dark-3: #2C2C2E;
+  --color-brand-gray-1: #3A3A3C;
+  --color-brand-gray-2: #636366;
+  --color-brand-gray-3: #8E8E93;
+  --color-brand-gray-4: #C7C7CC;
+
+  /* Font families */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+
+  /* Keyframes */
+  --animate-fade-in: fadeIn 0.6s ease-out forwards;
+  --animate-fade-up: fadeUp 0.6s ease-out forwards;
+  --animate-pulse-yellow: pulseYellow 2s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes pulseYellow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(250, 204, 21, 0); }
+  }
+
+  @keyframes bounceSlight {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #FACC15;
+    color: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1C1C1E;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FACC15;
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-gradient-yellow {
+    background: linear-gradient(135deg, #FACC15, #EAB308);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .glass {
+    background: rgba(28, 28, 30, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Legible copy over photos — no full-image wash */
+  .text-readable {
+    text-shadow:
+      0 0 1px rgba(0, 0, 0, 1),
+      0 1px 3px rgba(0, 0, 0, 0.9),
+      0 2px 12px rgba(0, 0, 0, 0.65);
+  }
+
+  .text-readable-strong {
+    text-shadow:
+      0 0 2px rgba(0, 0, 0, 1),
+      0 2px 4px rgba(0, 0, 0, 0.95),
+      0 4px 20px rgba(0, 0, 0, 0.75);
+  }
+
+  /* Solid yellow accent — readable on bright photos (no transparent gradient) */
+  .text-accent-yellow {
+    color: #facc15;
+    text-shadow:
+      -1px -1px 0 #0a0a0a,
+      1px -1px 0 #0a0a0a,
+      -1px 1px 0 #0a0a0a,
+      1px 1px 0 #0a0a0a,
+      0 0 6px #0a0a0a,
+      0 2px 10px rgba(0, 0, 0, 0.95),
+      0 4px 24px rgba(0, 0, 0, 0.85);
+  }
+
+  .copy-backdrop {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .copy-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: -1rem;
+    z-index: -1;
+    border-radius: 1.25rem;
+    background: linear-gradient(
+      105deg,
+      rgba(10, 10, 10, 0.92) 0%,
+      rgba(10, 10, 10, 0.65) 50%,
+      transparent 100%
+    );
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+}
