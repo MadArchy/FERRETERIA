@@ -2,6 +2,21 @@
 
 Sitio web de ferretería construido con [Next.js](https://nextjs.org).
 
+## Recursos locales (sin CDN)
+
+Todo lo necesario para **ver** el sitio está en el proyecto:
+
+| Recurso | Ubicación |
+|---------|-----------|
+| Imágenes | `public/images/` |
+| Colores de marca | `src/app/globals.css` (`@theme`) |
+| Tipografía Inter | `@fontsource/inter` (npm, incluida en el build) |
+| Iconos UI | `lucide-react` + SVG propios (`WhatsAppIcon`, `FacebookIcon`) |
+
+No se cargan fuentes ni imágenes desde Google Fonts ni otros CDN al abrir la página.
+
+Los enlaces a WhatsApp, Facebook o Google Maps son solo botones de contacto (el usuario sale del sitio al usarlos).
+
 ## Desarrollo local
 
 ```bash
